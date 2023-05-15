@@ -1,8 +1,8 @@
-const information = document.getElementById('info')
-information.innerText = `This app is using Chrome (v${versions.chrome()}), \nNode.js (v${versions.node()}), \nand Electron (v${versions.electron()})`
+const {BrowserWindow} = require('electron')
 
 const func = async () => {
     const response = await window.versions.ping()
+    // you won't see the logs as it print in the renderer not the main process
     console.log(response) // prints out 'pong'
 }
 
